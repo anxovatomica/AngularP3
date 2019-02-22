@@ -1,0 +1,22 @@
+<!--
+  Author: Marcel Dufol
+  DAW2
+  2018-19
+-->
+      <script src="artifacts.component.css"></script>
+      <br><br>
+      <table class="tg">
+        <tr><th class="tg-ycr8" *ngFor='let n of main; let i = index'>{{n}}</th></tr>
+        <tr *ngFor='let artifact of artifacts; let k = index'>
+          <td class="tg-ycr8" >{{artifact.name}}</td>
+          <td class="tg-ycr8" >{{artifact.creationDate}}</td>
+          <td class="tg-ycr8" >{{artifact.description}}</td>
+          <td><input type="button" value="DELETE" (click)="delArtifact(k)"/></td>
+        </tr>
+      </table>
+
+      Name: <input type="text" [(ngModel)]="newName" /> <br>
+      Creation Date: <input type="text" [(ngModel)]="newCreation" /> <br>
+      Description: <input type="text" [(ngModel)]="newDescription" /> <br>
+      <button (click)="addArtifact()">ADD</button>
+       <br>

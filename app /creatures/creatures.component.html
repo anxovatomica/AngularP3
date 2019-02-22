@@ -1,0 +1,24 @@
+<!--
+  Author: Marcel Dufol
+  DAW2
+  2018-19
+-->
+<script src="artifacts.component.css"></script>
+      <br><br>
+        <base href="/">
+        <table class="tg">
+            <tr><th class="tg-ycr8" *ngFor='let n of main; let i = index'>{{n}}</th></tr>
+            <tr *ngFor='let creature of creatures; let k = index'>
+              <td class="tg-ycr8" >{{creature.name}}</td>
+              <td class="tg-ycr8" >{{creature.birth}}</td>
+              <td class="tg-ycr8" >{{creature.device}}</td>
+              <td><input type="button" value="DELETE" (click)="delCreature(k)"/></td>
+            </tr>
+          </table>
+          
+          Name: <input type="text" [(ngModel)]="newName" /> <br>
+          Birth: <input type="text" [(ngModel)]="newBirth" /> <br>
+          Device: <input type="text" [(ngModel)]="newDevice" /> <br>
+          <button (click)="addCreature()">ADD</button>
+           <br>
+           <app-artifacts></app-artifacts>
